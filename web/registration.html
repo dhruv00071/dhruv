@@ -47,6 +47,13 @@
       transition: all 0.5s;
       cursor: pointer;
       }
+
+    
+
+    .form-control mr-sm-2.expanded {
+    max-width:200px;
+    opacity:1;
+}
     </style>
 
         <!-- Required meta tags -->
@@ -58,7 +65,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
       </head>
       <body>
-        <nav class="navbar navbar-expand-lg" "navbar navbar-light" style="background-color:#000000;">
+        <nav class="navbar navbar-expand-lg" "navbar navbar-light" style="background-color:#333;">
           <a class="navbar-brand" href="#">
 
             <img src="D:\web\icon.svg"  width="50" height="50" alt="">
@@ -84,7 +91,8 @@
             </div>
           </li>
           <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2"  type="search" placeholder="Search" aria-label="Search" style="width:1200px; margin: 0 auto">
+            <input id="search" class="form-control mr-sm-2"  type="search" placeholder="Search" aria-label="Search" style="width:200px; margin: 0 auto">
+            <div class="expanded" ></div>
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
           </form>
         </ul>
@@ -133,5 +141,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/reg.js"></script>
   </body>
 </html>
