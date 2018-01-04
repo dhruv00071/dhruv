@@ -135,11 +135,13 @@
     include 'connect.php';
     if(isset($_POST['submit']))
     {
-      $username = $_POST['username'];
-      $email = $_POST['email'];
-      $password = $_POST['password'];
-      $confirmPassword = $_POST['confirmPassword'];
-      $phone = $_POST['phone'];
+      //To avoid sql injection
+      
+      $username = mysqli_real_escape_string($con,$_POST['username']);
+      $email = mysqli_real_escape_string($con,$_POST['email']);
+      $password = mysqli_real_escape_string($con,$_POST['password']);
+      $confirmPassword = mysqli_real_escape_string($con,$_POST['confirmPassword']);
+      $phone = mysqli_real_escape_string($con,$_POST['phone']);
 
       $HashedPassword=password_hash($password,PASSWORD_DEFAULT);
       $HashedConfirmPassword=password_hash($confirmPassword,PASSWORD_DEFAULT);
