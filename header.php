@@ -67,13 +67,76 @@
 <form action="" method="post">
 <div class="profile">
 <?php
-    session_start();
+  include 'connect.php';
+  session_start();
     if(isset($_SESSION['u_id']))
     {
-        echo "<img class='image' src='default-profile-dp.png' width='50' height='50'>";
+      if(isset($_POST['upload']))
+      {
+        $file = $_FILES['file'];
+        $fileName = $file['name'];
+        $fileSize = $file['size'];
+        $fileError = $file['error'];
+        $fileType = $file['type'];
+        $fileTmpName = $file['tmp_name'];
+
+        $fileExt = explode('.',$fileName);
+        $fileActualExt = strtolower(end($fileExt));
+        $allowed = array('jpg','jpeg','png');
+
+        if(in_array($fileActualExt, $allowed))
+        {
+          if($fileError==0)
+          {
+            if($fileSize<10000000)
+            {
+              $u_username = $_SESSION['u_username'];
+              $u_password = $_SESSION['u_password'];
+              $sql = "SELECT * FROM customer where username='$u_username' and password='$u_password'";
+              $result = mysqli_query($con,$sql);
+              if(mysqli_num_rows($result)>0)
+              {
+                while($row=mysqli_fetch_assoc($result))
+                {
+                  $id = $row['id'];
+                }
+              }
+              //$fileNameNew = uniqid('',true).".".$fileActualExt;
+              $fileDestination = 'uploads/profile'.$id.'.'.$fileActualExt;
+              move_uploaded_file($fileTmpName, $fileDestination);
+              echo "<img class='image' src='$fileDestination' width='50' height='50' alt='profile image'>";
+              echo "<div class='dropdown-divider'></div>";
+              echo "Welcome ".$_SESSION['u_fName']." ".$_SESSION['u_lName']."<br>";
+              echo '<input type="submit" name="logOut" value="Log Out">';
+            }
+            else
+            {
+              echo '<script language="javascript">';
+              echo 'alert("File is too big. It should be less than 10Mb.")';
+              echo '</script>';
+            }
+          }
+          else
+          {
+            echo '<script language="javascript">';
+            echo 'alert("Error in file")';
+            echo '</script>';
+          }
+        }
+        else
+        {
+          echo '<script language="javascript">';
+          echo 'alert("This Extension is not allowed")';
+          echo '</script>';
+        } 
+      }
+      else
+      {
+        echo "<img class='image' src='uploads/download.jpg' width='50' height='50' alt='profile image'>";
         echo "<div class='dropdown-divider'></div>";
         echo "Welcome ".$_SESSION['u_fName']." ".$_SESSION['u_lName']."<br>";
         echo '<input type="submit" name="logOut" value="Log Out">';
+      }
     }
     else
     {
