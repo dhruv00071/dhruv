@@ -46,8 +46,6 @@
       }
       .image123{
         display: none;
-      }
-
-      body{
-        background-color: #999;
+        position: relative;
+        bottom: 100px;
       }

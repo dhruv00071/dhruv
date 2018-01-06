@@ -6,7 +6,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/index1.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 
@@ -84,18 +84,14 @@
 ?>
 </div>
 </form>
-<form class="form-inline my-2 my-lg-0" method="post" enctype="multipart/form-data">
-<div class="image123">
-  <input type="file" name="file">
-</div>
-</form>
-    <script >
-      $(document).ready(function(){
-        $('#navbarDropdown1').click(function(){
-          $('.profile').slideToggle();
-        });
-      });
-    </script>
+  <form method="post" action="" enctype="multipart/form-data">
+    <div class="image123">
+      <input type="file" name="file">
+      <input type="submit" name="upload" value="Upload">
+    </div>
+  </form>
+
+    <script src="js/header.js">    </script>
    <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
