@@ -1,107 +1,20 @@
+<?php
+	include 'header.php';
+?>
 <!doctype html>
 <html lang="en">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-      <style>
-      p
-      {
-        color:red;
-      }
-      .card {
-          box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-          transition: 0.3s;
-          width: 20%;
-          border-radius: 5px;
-          margin-left: 70px;
-          margin-bottom: 10px;
-          margin-top: 50px;
-          float:left;
-      }
-
-      .card:hover {
-          box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-      }
-
-      img {
-          border-radius: 5px 5px 0 0;
-      }
-
-      .container {
-          padding-left: 200px;
-
-      }
-
-      .form-control mr-sm-2{
-        width: 50px;
-      }
-
-      </style>
-    
     <title>E-commerce</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <link rel="stylesheet" type="text/css" href="css/index.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
   </head>
   <body>
 
-    <nav class="navbar navbar-expand-lg" "navbar navbar-light" style="background-color:#000000;">
-      <a class="navbar-brand" href="#">
-
-        <img src="D:\web\icon.svg" width="50" height="50" alt="">
-      </a>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Offers</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Products
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Toys</a>
-          <a class="dropdown-item" href="#">Electronics</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Contact us</a>
-        </div>
-      </li>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2"  type="search" placeholder="Search" aria-label="Search" style="width:500px; margin: 0 auto">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
-    </ul>
-
-    <form class="form-inline my-2 my-lg-0">
-  <a class="nav-link" href="registration.php">Register <span class="sr-only">(current)</span></a>
-    </form>
-    <form class="form-inline my-2 my-lg-0">
-  <a class="nav-link" href="login.html">Login <span class="sr-only">(current)</span></a>
-    </form>
-    <form class="form-inline my-2 my-lg-0">
-  <a class="nav-link" href="sell.php">Sell <span class="sr-only">(current)</span></a>
-    </form>
-    <form class="form-inline my-2 my-lg-0">
-  <a class="nav-link" href="#">My Cart <span class="sr-only">(current)</span></a>
-    </form>
-    <form class="form-inline my-2 my-lg-0">
-  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Profile
-        </a>
-  <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-          <img class="dropdown-item" src="default-profile-dp.png" width="10" height="50" alt="default">
-          <div class="dropdown-divider"></div>
-          <p class="dropdown-item">Swapnil Jaiswal</p>
-        </div>
-    </form>
-
-</nav>
 <br>
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"  style="width: 1300px; height: 700px; margin: 0 auto">
 
@@ -165,7 +78,6 @@
 
    <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
   </body>
