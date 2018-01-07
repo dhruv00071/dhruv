@@ -109,35 +109,65 @@
       $HashedPassword=password_hash($password,PASSWORD_DEFAULT);
       $HashedConfirmPassword=password_hash($confirmPassword,PASSWORD_DEFAULT);
 
-      $insert= "INSERT INTO customer(fName,lName,username,email,password,confirmPassword,phone) VALUES(?,?,?,?,?,?,?)";
+                    $check = "SELECT * From customer where email='$email' OR phone='$phone' OR username='$username'";
+                    $query = mysqli_query($con,$check);
+                    while($row = mysqli_fetch_assoc($query))
+                    {
+                      $emailCheck = $row['email'];
+                      $phoneCheck = $row['phone'];
+                      $usernameCheck = $row['username'];
+                    }
+                    if($email == $emailCheck)
+                    {
+                      echo '<script language="javascript">';
+                      echo 'alert("This email is already registered")';
+                      echo '</script>';
+                    }
+                    elseif($username == $usernameCheck)
+                    {
+                      echo '<script language="javascript">';
+                      echo 'alert("This username has already been taken.")';
+                      echo '</script>';
+                    }
+                    elseif($phone == $phoneCheck)
+                    {
+                      echo '<script language="javascript">';
+                      echo 'alert("Phone no. has already been registered")';
+                      echo '</script>';
+                    }
+                    else
+                    {
 
-    // Prepared Statements
-      
-    if($password===$confirmPassword)
-    {
-      $stmt = mysqli_stmt_init($con);
-      if(!mysqli_stmt_prepare($stmt,$insert))
-      {
-        echo '<script language="javascript">';
-        echo 'alert("SQL Statement Failed")';
-        echo '</script>';
-      }
-      else
-      {
-        mysqli_stmt_bind_param($stmt,"ssssssi",$fName,$lName,$username,$email,$HashedPassword,$HashedConfirmPassword,$phone);
-        mysqli_stmt_execute($stmt);
-        mysqli_stmt_get_result($stmt);
-        echo '<script language="javascript">';
-        echo 'alert("Data Successfully Saved")';
-        echo '</script>';
-      }
-    }
-    else
-    {
-      echo '<script language="javascript">';
-      echo 'alert("Passwords do not match")';
-      echo '</script>';
-    }
+                    $insert= "INSERT INTO customer(fName,lName,username,email,password,confirmPassword,phone) VALUES(?,?,?,?,?,?,?)";
+
+                  // Prepared Statements
+                    
+                  if($password===$confirmPassword)
+                  {
+                    $stmt = mysqli_stmt_init($con);
+                    if(!mysqli_stmt_prepare($stmt,$insert))
+                    {
+                      echo '<script language="javascript">';
+                      echo 'alert("SQL Statement Failed")';
+                      echo '</script>';
+                    }
+                    else
+                    {
+                      mysqli_stmt_bind_param($stmt,"ssssssi",$fName,$lName,$username,$email,$HashedPassword,$HashedConfirmPassword,$phone);
+                      mysqli_stmt_execute($stmt);
+                      mysqli_stmt_get_result($stmt);
+                      echo '<script language="javascript">';
+                      echo 'alert("Data Successfully Saved")';
+                      echo '</script>';
+                    }
+                  }
+                  else
+                  {
+                    echo '<script language="javascript">';
+                    echo 'alert("Passwords do not match")';
+                    echo '</script>';
+                  }
+              }
   }
 ?>
     <!-- Optional JavaScript -->
