@@ -1,5 +1,5 @@
 <?php
-	include 'connect.php';
+	include 'header.php';
 ?>
 
 <html>
@@ -51,7 +51,7 @@
 		echo "<form method=post action='dd3ck.php'>";
 		// Starting of first dropdown
 
-		echo "<br><br><select name='cat' onchange=\"reload(this.form)\"><option value=''>Category</option>";
+		echo "<br><br><select name='cat' onchange=\"reload(this.form)\" class='form-control input-lg' style='width:400px;'><option value=''>Category</option>";
 		foreach (mysqli_query($con,$quer2) as $result2) 
 		{
 			if($result2['category']==@$cat)
@@ -67,7 +67,7 @@
 		//This will end the first dropdown
 
 		//Starting of second dropdown
-		echo "<br><br><select name='subcat' onchange=\"reload3(this.form)\"><option value=''>Type</option>";
+		echo "<br><br><select name='subcat' onchange=\"reload3(this.form)\" class='form-control input-lg' style='width:400px;'><option value=''>Type</option>";
 		foreach (mysqli_query($con,$quer) as $result) 
 		{
 			if($result['type']==@$cat3)
@@ -83,7 +83,7 @@
 		//This will end the second dropdown
 
 		//Starting of third dropdown
-		echo "<br><br><select name='cat3' ><option value=''>Brand</option>";
+		echo "<br><br><select name='cat3' class='form-control input-lg' style='width:400px;'><option value=''>Brand</option>";
 		foreach (mysqli_query($con,$quer3) as $result) 
 		{
 			echo  "<option value='$result[brand]'>$result[brand]</option>";
@@ -94,9 +94,9 @@
 		//echo "<br><br><";
 	?>
 	
-	<br><br><input type=text placeholder='Model Number'>
-	<br><br><input type=text placeholder='Price'>
-	<br><br><input type=submit value='Submit the form data'>
+	<br><br><input type=text placeholder='Model Number' class="form-control input-lg" style="width:400px;">
+	<br><br><input type=text placeholder='Price' class="form-control input-lg" style="width:400px;">
+	<br><br><input type=submit value='Submit the form data' class="form-control input-lg">
 	<form>
 	</body>
 	
