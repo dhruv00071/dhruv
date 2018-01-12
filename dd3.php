@@ -6,7 +6,34 @@
 
 	<head>
 		<title>Add Product</title>
+		    <style type="text/css">
+        .bs-example{
+        	margin-left: 750px;
+          margin-top:60px;
+        }
 
+        label{
+          font-size: 150%;
+        }
+        .btn btn-primary{
+          font-size: 150%;
+        }
+        .button {
+      display: inline-block;
+      border-radius: 4px;
+      background-color: #f4511e;
+      border: none;
+      color: #FFFFFF;
+      text-align: center;
+      font-size: 15px;
+      padding: 20px;
+      width: 100%;
+      transition: all 0.5s;
+      cursor: pointer;
+
+    }
+
+    </style>
 		<script>
 			function reload(form)
 			{
@@ -49,8 +76,9 @@
 
 
 		echo "<form method=post action='dd3ck.php'>";
+		echo "<div class='form-group'>";
 		// Starting of first dropdown
-
+		echo "<label for='inputCategory'>Category</label>";
 		echo "<br><br><select name='cat' onchange=\"reload(this.form)\" class='form-control input-lg' style='width:400px;'><option value=''>Category</option>";
 		foreach (mysqli_query($con,$quer2) as $result2) 
 		{
@@ -64,8 +92,9 @@
 			}
 		}
 		echo "</select>";
+		echo "</div>";
 		//This will end the first dropdown
-
+		echo "<label for='inputSubCategory'>Sub Category</label>";
 		//Starting of second dropdown
 		echo "<br><br><select name='subcat' onchange=\"reload3(this.form)\" class='form-control input-lg' style='width:400px;'><option value=''>Type</option>";
 		foreach (mysqli_query($con,$quer) as $result) 
@@ -81,7 +110,7 @@
 		}
 		echo "</select>";
 		//This will end the second dropdown
-
+		echo "<label for='inputBrand'>Brand</label>";
 		//Starting of third dropdown
 		echo "<br><br><select name='cat3' class='form-control input-lg' style='width:400px;'><option value=''>Brand</option>";
 		foreach (mysqli_query($con,$quer3) as $result) 
@@ -93,10 +122,11 @@
 
 		//echo "<br><br><";
 	?>
-	
-	<br><br><input type=text placeholder='Model Number' class="form-control input-lg" style="width:400px;">
+	<label for='inputBrand'>Model No.</label>
+	<br><br><input type=text placeholder='Model Number' class="form-control input-lg" style="width:400px;"><br>
+	<label for='inputBrand'>Price</label>
 	<br><br><input type=text placeholder='Price' class="form-control input-lg" style="width:400px;">
-	<br><br><input type=submit value='Submit the form data' class="form-control input-lg">
+	<br><br><input type=submit value='Submit the form data' class="button">
 	<form>
 	</body>
 	
