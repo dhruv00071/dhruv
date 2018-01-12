@@ -1,6 +1,6 @@
         p
         {
-          color:#00FF00;
+          color:red;
         }
       .card {
           box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -36,7 +36,7 @@
 
       .profile{
       	background-color: white;
-      	position: relative;
+      	position: absolute;
       	left: 1160px;
       	display: none;
       	border-left: 1px solid black;
@@ -46,8 +46,4 @@
       }
       .image123{
         display: none;
-      }
-
-      body{
-        background-color: #999;
       }

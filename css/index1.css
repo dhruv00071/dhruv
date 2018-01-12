@@ -37,12 +37,14 @@
       .profile{
       	background-color: white;
       	position: relative;
-      	left: 1160px;
+      	top:0px;
+        right: 0px;
       	display: none;
       	border-left: 1px solid black;
       	border-right: 1px solid black;
       	border-bottom: 1px solid black;
       	width: 188px;
+        z-index: 1000;
       }
       .image123{
         display: none;
