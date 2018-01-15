@@ -50,7 +50,13 @@
 	</head>
 
 	<body>
-	
+	<form method="POST" action="pro.php" enctype="multipart/form-data">
+  		<input  type="text" name="adtitle" placeholder="Ad Title" required><br></br>
+  	<textarea id="text" cols="40" rows="4" name="description" placeholder="Description...."  required></textarea>
+  		<input type="hidden" name="size" value="1000000">
+  		<div>
+  			<input type="file" name="image">
+  		</div>
 	<?php
 		
 		//Getting the data from database for first dropdown

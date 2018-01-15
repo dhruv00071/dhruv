@@ -1,12 +1,12 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>E-commerce</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" type="text/css" href="new.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/in.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 
@@ -14,8 +14,7 @@
       crossorigin="anonymous"></script>
 </head>
 <body>
-
-    <nav class="navbar navbar-expand-lg" "navbar navbar-light" style="background-color:#000000;">
+    <nav class="navbar navbar-expand-lg" "navbar navbar-light" id="navigation">
       <a class="navbar-brand" href="#">
         <img src="D:\web\icon.svg" width="50" height="50" alt="">
       </a>
@@ -40,7 +39,7 @@
         </div>
       </li>
       <form class="form-inline my-2 my-lg-0" action="search.php" method="post">
-        <input class="form-control mr-sm-2"  type="text" placeholder="Search" aria-label="Search" name="text-search" style="width:500px; margin: 0 auto">
+        <input class="form-control mr-sm-2" id="search" type="text" placeholder="Search" aria-label="Search" name="text-search">
         <button class="btn btn-outline-success my-2 my-sm-0" name="search" type="submit">Search</button>
       </form>
     </ul>
@@ -132,24 +131,11 @@
       }
       else
       {
-        $stat = "SELECT * FROM user where id='$u_id'";
-        $que=mysqli_query($con,$stat);
-        $row=mysqli_fetch_array($que);
-          $status=$row['id'];
-        if($status==1)
-        {
-              echo "<img class='image' src='$fileDestination' width='50' height='50' alt='profile image'>";
-              echo "<div class='dropdown-divider'></div>";
-              echo "Welcome ".$_SESSION['u_fName']." ".$_SESSION['u_lName']."<br>";
-              echo '<input type="submit" name="logOut" value="Log Out">';
-        }
-        else
-        {
         echo "<img class='image' src='uploads/download.jpg' width='50' height='50' alt='profile image'>";
         echo "<div class='dropdown-divider'></div>";
         echo "Welcome ".$_SESSION['u_fName']." ".$_SESSION['u_lName']."<br>";
         echo '<input type="submit" name="logOut" value="Log Out">';
-        }
+        
       }
     }
     else

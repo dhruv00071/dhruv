@@ -9,14 +9,14 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" type="text/css" href="css/index1.css">
+    <link rel="stylesheet" type="text/css" href="css/in.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
   </head>
   <body>
 
 <br>
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"  style="width: 1300px; height: 700px; margin: 0 auto">
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" >
 
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -42,28 +42,28 @@
   </a>
     </div>
     <div class="card">
-      <img src="iphone6.png" alt="Avatar" style="width:100%">
+      <img src="iphone6.png" alt="Avatar">
       <div class="container">
         <h4 id="iphone"><b>iphone 6</b></h4>
         <p style="font-size:20px">₹30000</p>
       </div>
     </div>
     <div class="card">
-      <img src="tv.jpg" alt="Avatar" style="width:100%">
+      <img src="tv.jpg" alt="Avatar">
       <div class="container">
         <h4><b>Samsung LED TV</b></h4>
         <p style="font-size:20px">₹120000</p>
       </div>
     </div>
     <div class="card">
-      <img src="book.png" alt="Avatar" style="width:100%">
+      <img src="book.png" alt="Avatar">
       <div class="container">
         <h4><b>Diary of a Wimpy Kid: Trouble Manny</b></h4>
         <p style="font-size:20px">₹499</p>
       </div>
     </div>
     <div class="card">
-      <img src="ear.jpg" alt="Avatar" style="width:100%">
+      <img src="ear.jpg" alt="Avatar">
       <div class="container">
         <h4><b>JBL C100SI In-Ear Headphones with Mic (White)</b></h4>
       <p style="font-size:20px">₹800</p>
