@@ -1,39 +1,17 @@
+<!DOCTYPE html>
 <?php
-	include 'header.php';
+include 'header.php';
 ?>
 
 <html>
 
 	<head>
 		<title>Add Product</title>
-		    <style type="text/css">
-        .bs-example{
-        	margin-left: 750px;
-          margin-top:60px;
-        }
-
-        label{
-          font-size: 150%;
-        }
-        .btn btn-primary{
-          font-size: 150%;
-        }
-        .button {
-      display: inline-block;
-      border-radius: 4px;
-      background-color: #f4511e;
-      border: none;
-      color: #FFFFFF;
-      text-align: center;
-      font-size: 15px;
-      padding: 20px;
-      width: 100%;
-      transition: all 0.5s;
-      cursor: pointer;
-
-    }
-
-    </style>
+		   <link rel="stylesheet" type="text/css" href="css/dd3.css">
+		    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
 		<script>
 			function reload(form)
 			{
@@ -50,13 +28,7 @@
 	</head>
 
 	<body>
-	<form method="POST" action="pro.php" enctype="multipart/form-data">
-  		<input  type="text" name="adtitle" placeholder="Ad Title" required><br></br>
-  	<textarea id="text" cols="40" rows="4" name="description" placeholder="Description...."  required></textarea>
-  		<input type="hidden" name="size" value="1000000">
-  		<div>
-  			<input type="file" name="image">
-  		</div>
+	<div id="wid">
 	<?php
 		
 		//Getting the data from database for first dropdown
@@ -81,11 +53,12 @@
 		// end of query for third dropdown
 
 
-		echo "<form method=post action='dd3ck.php'>";
-		echo "<div class='form-group'>";
+		echo'<form method="POST" action="dd3ck.php" enctype="multipart/form-data">';
+		
+		//echo "<form method=post action='dd3ck.php'>";
 		// Starting of first dropdown
-		echo "<label for='inputCategory'>Category</label>";
-		echo "<br><br><select name='cat' onchange=\"reload(this.form)\" class='form-control input-lg' style='width:400px;'><option value=''>Category</option>";
+
+		echo "<br><br><select name='cat' onchange=\"reload(this.form)\" class='form-control input-lg'><option value=''>Category</option>";
 		foreach (mysqli_query($con,$quer2) as $result2) 
 		{
 			if($result2['category']==@$cat)
@@ -98,11 +71,10 @@
 			}
 		}
 		echo "</select>";
-		echo "</div>";
 		//This will end the first dropdown
-		echo "<label for='inputSubCategory'>Sub Category</label>";
+
 		//Starting of second dropdown
-		echo "<br><br><select name='subcat' onchange=\"reload3(this.form)\" class='form-control input-lg' style='width:400px;'><option value=''>Type</option>";
+		echo "<br><br><select name='subcat' onchange=\"reload3(this.form)\" class='form-control input-lg'><option value=''>Type</option>";
 		foreach (mysqli_query($con,$quer) as $result) 
 		{
 			if($result['type']==@$cat3)
@@ -116,9 +88,9 @@
 		}
 		echo "</select>";
 		//This will end the second dropdown
-		echo "<label for='inputBrand'>Brand</label>";
+
 		//Starting of third dropdown
-		echo "<br><br><select name='cat3' class='form-control input-lg' style='width:400px;'><option value=''>Brand</option>";
+		echo "<br><br><select name='cat3' class='form-control input-lg'><option value=''>Brand</option>";
 		foreach (mysqli_query($con,$quer3) as $result) 
 		{
 			echo  "<option value='$result[brand]'>$result[brand]</option>";
@@ -128,12 +100,38 @@
 
 		//echo "<br><br><";
 	?>
-	<label for='inputBrand'>Model No.</label>
-	<br><br><input type=text placeholder='Model Number' class="form-control input-lg" style="width:400px;"><br>
-	<label for='inputBrand'>Price</label>
-	<br><br><input type=text placeholder='Price' class="form-control input-lg" style="width:400px;">
-	<br><br><input type=submit value='Submit the form data' class="button">
-	<form>
-	</body>
 	
+	<br><br><input class="form-control input-lg" name='model' type=text placeholder='Model Number'>
+	<br><br><input class="form-control input-lg" name='price' type=number placeholder='Price'>
+	<br><br><input class="form-control input-lg" name='quantity' type=number placeholder='Quantity'>
+	<br><br><input class="form-control input-lg" type="file" name="image">
+	<br><br><button type="submit" name="upload" class="button">Upload</button> 
+	<form>
+	</div>
+	</body>
+
+  
 </html>
+
+<script>  
+ $(document).ready(function(){  
+      $('#insert').click(function(){  
+           var image_name = $('#image').val();  
+           if(image_name == '')  
+           {  
+                alert("Please Select Image");  
+                return false;  
+           }  
+           else  
+           {  
+                var extension = $('#image').val().split('.').pop().toLowerCase();  
+                if(jQuery.inArray(extension, ['gif','png','jpg','jpeg']) == -1)  
+                {  
+                     alert('Invalid Image File');  
+                     $('#image').val('');  
+                     return false;  
+                }  
+           }  
+      });  
+ });  
+ </script> 

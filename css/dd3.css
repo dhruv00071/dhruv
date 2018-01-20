@@ -1,6 +1,6 @@
         p
         {
-          color:green;
+          color:red;
         }
         #carouselExampleIndicators{
           width: 100%;
@@ -24,7 +24,7 @@
       .card:hover {
           box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
       }
-      .form-control .input-lg{
+      #wid{
         width:500px;
       }
       .card img {
@@ -41,7 +41,20 @@
           margin: 0 auto;
 
       }
+         .button {
+      display: inline-block;
+      border-radius: 4px;
+      background-color: #f4511e;
+      border: none;
+      color: #FFFFFF;
+      text-align: center;
+      font-size: 15px;
+      padding: 20px;
+      width: 100px;
+      transition: all 0.5s;
+      cursor: pointer;
 
+    }
       .form-control mr-sm-2{
         width: 50px;
       }
