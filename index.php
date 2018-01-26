@@ -48,6 +48,23 @@
         <p style="font-size:20px">₹30000</p>
       </div>
     </div>
+    <?php
+    $display="SELECT * FROM product_details";
+    $query=mysqli_query($con,$display);
+    while($row = mysqli_fetch_assoc($query))
+    {
+      $model_no = $row['model_no'];
+      $image = $row['image'];
+      $price = $row['price'];
+
+      echo '    <div class="card">
+      <img src="pimages/'.$image.'" alt="Avatar">
+      <div class="container">
+        <h4><b>'.$model_no.'</b></h4>
+        <p style="font-size:20px">₹'.$price.'</p>
+      </div>
+    </div>';
+     } ?>
     <div class="card">
       <img src="tv.jpg" alt="Avatar">
       <div class="container">
