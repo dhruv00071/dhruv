@@ -4,7 +4,7 @@
 </head>
 <body>
 <?php
-$con = mysqli_connect("localhost","root","","ecommerce");
+include 'connect.php';
 if (isset($_POST['upload'])) 
 {
 	$target = "pimages/".basename($_FILES['image']['name']);
@@ -15,8 +15,7 @@ if (isset($_POST['upload']))
 	$price=$_POST['price'];
 	$model=mysqli_real_escape_string ($con,$_POST['model']);
 	$quantity=$_POST['quantity'];
-	$sql = "INSERT INTO product_details VALUES ('$cat','$subcat','$subcat3','$price','$model','$image','$quantity')";
-	mysqli_query($con, $sql);
+	$sql = "INSERT INTO product_details(category,type,brand,price,model_no,image,quantity) VALUES ('$cat','$subcat','$subcat3','$price','$model','$image','$quantity')";
 	if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) 
 	{
 		echo '<script>alert("Product inserted into Database")</script>'; 
