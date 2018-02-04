@@ -41,7 +41,9 @@
           margin: 0 auto;
 
       }
-
+      .card .container a{
+        font-size: 20px;
+      }
       .form-control mr-sm-2{
         width: 50px;
       }

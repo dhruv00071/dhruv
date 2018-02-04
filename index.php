@@ -57,10 +57,10 @@
       $image = $row['image'];
       $price = $row['price'];
 
-      echo '    <div class="card">
+      echo ' <div class="card">
       <img src="pimages/'.$image.'" alt="Avatar">
       <div class="container">
-        <h4><b>'.$model_no.'</b></h4>
+        <a class="a1" href="view.php?id='.$model_no.'">'.$model_no.'<br></a>
         <p style="font-size:20px">₹'.$price.'</p>
       </div>
     </div>';
