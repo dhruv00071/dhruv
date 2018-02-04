@@ -109,6 +109,10 @@
                     <label for="rememberme">Remember Me</label>
                 </div>
 
+                 <div class="form-group">
+                    <p>Haven't registered yet ? <a href="registration.php">Sign up now</a></p>
+                </div>
+
                 <button type="submit" class="button" name="login">Login</button>
             </form>
         </div>

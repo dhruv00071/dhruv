@@ -45,7 +45,7 @@
     </ul>
 
     <form class="form-inline my-2 my-lg-0">
-  <a class="nav-link" href="registration.php">Register <span class="sr-only">(current)</span></a>
+  <a class="nav-link" href="dd3.php">Add Products <span class="sr-only">(current)</span></a>
     </form>
     <form class="form-inline my-2 my-lg-0">
   <a class="nav-link" href="login.php">Login <span class="sr-only">(current)</span></a>

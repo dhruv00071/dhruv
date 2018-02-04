@@ -48,6 +48,27 @@
         <p style="font-size:20px">₹30000</p>
       </div>
     </div>
+    <div class="card">
+      <img src="tv.jpg" alt="Avatar">
+      <div class="container">
+        <h4><b>Samsung LED TV</b></h4>
+        <p style="font-size:20px">₹120000</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="book.png" alt="Avatar">
+      <div class="container">
+        <h4><b>Diary of a Wimpy Kid</b></h4>
+        <p style="font-size:20px">₹499</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="ear.jpg" alt="Avatar">
+      <div class="container">
+        <h4><b>JBL Ear Headphones</b></h4>
+      <p style="font-size:20px">₹800</p>
+      </div>
+    </div>
     <?php
     $display="SELECT * FROM product_details";
     $query=mysqli_query($con,$display);
@@ -60,32 +81,11 @@
       echo ' <div class="card">
       <img src="pimages/'.$image.'" alt="Avatar">
       <div class="container">
-        <a class="a1" href="view.php?id='.$model_no.'">'.$model_no.'<br></a>
+        <h4><b><a class="a1" href="view.php?id='.$model_no.'">'.$model_no.'<br></a></h4></b>
         <p style="font-size:20px">₹'.$price.'</p>
       </div>
     </div>';
      } ?>
-    <div class="card">
-      <img src="tv.jpg" alt="Avatar">
-      <div class="container">
-        <h4><b>Samsung LED TV</b></h4>
-        <p style="font-size:20px">₹120000</p>
-      </div>
-    </div>
-    <div class="card">
-      <img src="book.png" alt="Avatar">
-      <div class="container">
-        <h4><b>Diary of a Wimpy Kid: Trouble Manny</b></h4>
-        <p style="font-size:20px">₹499</p>
-      </div>
-    </div>
-    <div class="card">
-      <img src="ear.jpg" alt="Avatar">
-      <div class="container">
-        <h4><b>JBL C100SI In-Ear Headphones with Mic (White)</b></h4>
-      <p style="font-size:20px">₹800</p>
-      </div>
-    </div>
     <script >
     	function drop-profile(){
     		document.getElementById('iphone').innerHTML = "New Content";
