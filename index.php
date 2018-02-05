@@ -12,6 +12,22 @@
     <link rel="stylesheet" type="text/css" href="css/in.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<style type="text/css">
+	.card{
+		width: 400px;
+		height:500px;
+	}
+	.card img{
+		height:auto;
+		max-width: 400px;
+		margin-top: 20px;
+	}
+	.container a {
+		font-size: 40px;
+		color: black;
+	}
+
+	</style>
   </head>
   <body>
 
@@ -48,8 +64,26 @@
         <p style="font-size:20px">₹30000</p>
       </div>
     </div>
+    <?php
+    $display="SELECT * FROM product_details";
+    $query=mysqli_query($con,$display);
+    while($row = mysqli_fetch_assoc($query))
+    {
+			  $id=$row['id'];
+      $model_no = $row['model_no'];
+      $image = $row['image'];
+      $price = $row['price'];
+
+      echo ' <div class="card">
+      <img src="pimages/'.$image.'" >
+      <div class="container">
+      <a  href="productview.php?id='.$id.'">'.$model_no.'<br></a>
+        <p style="font-size:20px">₹'.$price.'</p>
+      </div>
+    </div>';
+     } ?>
     <div class="card">
-      <img src="tv.jpg" alt="Avatar">
+      <img src="tv.jpg" class="a2" alt="Avatar">
       <div class="container">
         <h4><b>Samsung LED TV</b></h4>
         <p style="font-size:20px">₹120000</p>
@@ -58,34 +92,17 @@
     <div class="card">
       <img src="book.png" alt="Avatar">
       <div class="container">
-        <h4><b>Diary of a Wimpy Kid</b></h4>
+        <h4><b>Diary of a Wimpy Kid: Trouble Manny</b></h4>
         <p style="font-size:20px">₹499</p>
       </div>
     </div>
     <div class="card">
       <img src="ear.jpg" alt="Avatar">
       <div class="container">
-        <h4><b>JBL Ear Headphones</b></h4>
+        <h4><b>JBL C100SI In-Ear Headphones with Mic (White)</b></h4>
       <p style="font-size:20px">₹800</p>
       </div>
     </div>
-    <?php
-    $display="SELECT * FROM product_details";
-    $query=mysqli_query($con,$display);
-    while($row = mysqli_fetch_assoc($query))
-    {
-      $model_no = $row['model_no'];
-      $image = $row['image'];
-      $price = $row['price'];
-
-      echo ' <div class="card">
-      <img src="pimages/'.$image.'" alt="Avatar">
-      <div class="container">
-        <h4><b><a class="a1" href="view.php?id='.$model_no.'">'.$model_no.'<br></a></h4></b>
-        <p style="font-size:20px">₹'.$price.'</p>
-      </div>
-    </div>';
-     } ?>
     <script >
     	function drop-profile(){
     		document.getElementById('iphone').innerHTML = "New Content";
