@@ -54,7 +54,7 @@
   <a class="nav-link" href="sell.php">Sell <span class="sr-only">(current)</span></a>
     </form>
     <form class="form-inline my-2 my-lg-0">
-  <a class="nav-link" href="#">My Cart <span class="sr-only">(current)</span></a>
+  <a class="nav-link" href="cart.php"> My Cart <span class="sr-only">(current)</span></a>
     </form>
     <form class="form-inline my-2 my-lg-0" method="post">
   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

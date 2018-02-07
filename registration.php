@@ -84,7 +84,10 @@
                     <label for="inputPassword">Confirm Password</label>
                     <input type="password" class="form-control input-lg" id="inputPassword" name="confirmPassword" placeholder="Confirm Password"  style="width:400px;" required>
                 </div>
-
+                <div class="form-group">
+                <label for="">Address*</label><br>
+                <textarea class="form-control input-lg" name="address"></textarea>
+            </div>
                 <div class="form-group">
                   <label for="inputPhone">Mobile No.</label>
                   <input type="number" class="form-control input-lg" id="inputnumber" name="phone" placeholder="Phone No." style="width:400px;"  required>
@@ -105,6 +108,7 @@
       $password = mysqli_real_escape_string($con,$_POST['password']);
       $confirmPassword = mysqli_real_escape_string($con,$_POST['confirmPassword']);
       $phone = mysqli_real_escape_string($con,$_POST['phone']);
+      $address = mysqli_real_escape_string($con,$_POST['address']);
 
       $HashedPassword=password_hash($password,PASSWORD_DEFAULT);
       $HashedConfirmPassword=password_hash($confirmPassword,PASSWORD_DEFAULT);
@@ -138,7 +142,7 @@
                     else
                     {
 
-                    $insert= "INSERT INTO customer(fName,lName,username,email,password,confirmPassword,phone) VALUES(?,?,?,?,?,?,?)";
+                    $insert= "INSERT INTO customer(fName,lName,username,email,password,confirmPassword,phone,address) VALUES(?,?,?,?,?,?,?,?)";
 
                   // Prepared Statements
                     
@@ -153,7 +157,7 @@
                     }
                     else
                     {
-                      mysqli_stmt_bind_param($stmt,"ssssssi",$fName,$lName,$username,$email,$HashedPassword,$HashedConfirmPassword,$phone);
+                      mysqli_stmt_bind_param($stmt,"ssssssis",$fName,$lName,$username,$email,$HashedPassword,$HashedConfirmPassword,$phone,$address);
                       mysqli_stmt_execute($stmt);
                       mysqli_stmt_get_result($stmt);
                       echo '<script language="javascript">';

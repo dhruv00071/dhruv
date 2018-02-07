@@ -34,6 +34,7 @@
             $_SESSION['u_email'] = $row['email'];
             $_SESSION['u_username'] = $row['username'];
             $_SESSION['u_password'] = $row['password'];
+            $_SESSION['u_address'] = $row['address'];
             header('location:index.php?login=success');
             exit();
           }
