@@ -122,7 +122,7 @@
             }
             else
             {
-                '<script>alert("Successfully added to cart")</script>';
+                echo '<script>alert("Successfully added to cart")</script>';
             }
         }
     }
