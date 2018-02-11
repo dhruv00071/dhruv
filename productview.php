@@ -72,6 +72,7 @@
   </head>
   <body>
 <?php
+	$_SESSION['notif'] = "";
     $id = $_GET['id'];
     $result = mysqli_query($con,"SELECT * FROM product_details
     WHERE id='$id'") OR DIE(mysqli_error($con));
@@ -83,6 +84,16 @@
     echo "<h2>Model: ".$row['model_no']."</h2>" ;
     echo "<h2>Price: ".$row['price']."</h2>" ;
     }
+
+            $getCategory = "Select * from product_details WHERE id='$id'";
+            $result=mysqli_query($con,$getCategory);
+
+            $row1 = mysqli_fetch_assoc($result);
+
+                $type = $row1['type'];
+                $brand = $row1['brand'];
+                $model_no = $row1['model_no'];
+                $price = $row1['price'];
     if(isset($_POST['cart']))
     {
         if(!$_SESSION['u_id'])
@@ -100,15 +111,6 @@
             //from url in include in cart.php
             $_SESSION['id']=$id;
 
-            $getCategory = "Select * from product_details WHERE id='$id'";
-            $result=mysqli_query($con,$getCategory);
-
-            $row = mysqli_fetch_assoc($result);
-
-                $type = $row['type'];
-                $brand = $row['brand'];
-                $model_no = $row['model_no'];
-                $price = $row['price'];
 
             $addCart="INSERT into cart(item_id,fName,lName,username,email,type,brand,model_no,price,address) values(?,?,?,?,?,?,?,?,?,?)";
 
@@ -124,6 +126,17 @@
             {
                 echo '<script>alert("Successfully added to cart")</script>';
             }
+        }
+    }
+    if(isset($_POST['buy']))
+    {
+    	if(!$_SESSION['u_id'])
+        {
+            echo '<script>alert("Login First.")</script>';
+        }
+        else
+        {
+        	$_SESSION['notif'].= "You have successfully placed your order of ".$type." ".$brand." ".$model_no." having price : ".$price;
         }
     }
 ?>

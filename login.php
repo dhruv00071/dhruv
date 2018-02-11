@@ -35,7 +35,7 @@
             $_SESSION['u_username'] = $row['username'];
             $_SESSION['u_password'] = $row['password'];
             $_SESSION['u_address'] = $row['address'];
-            header('location:index.php?login=success');
+            echo '<script>location.href="index.php?login=success"</script>';
             exit();
           }
         }

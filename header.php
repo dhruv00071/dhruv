@@ -14,7 +14,7 @@
       crossorigin="anonymous"></script>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg" "navbar navbar-light" id="navigation">
+    <nav class="navbar navbar-expand-lg navbar-fixed-top" "navbar navbar-light" id="navigation">
       <a class="navbar-brand" href="#">
         <img src="D:\web\icon.svg" width="50" height="50" alt="">
       </a>
@@ -27,7 +27,19 @@
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span>Notifications</a>
         <ul class="dropdown-menu">
-          <li class="dropdown-item">dcz</li>
+          <li class="dropdown-item">
+<?php 
+    session_start();
+    if($_SESSION['notif']!=="" && isset($_SESSION['u_id']))
+    {
+      echo $_SESSION['notif'];
+    }
+    else
+    {
+      echo "No new notifications";
+    }
+?>
+          </li>
         </ul>
       </li>
       <li class="nav-item dropdown">
@@ -69,7 +81,6 @@
 <div class="profile">
 <?php
   include 'connect.php';
-  session_start();
     if(isset($_SESSION['u_id']))
     {
       $u_id=$_SESSION['u_id'];
@@ -169,10 +180,10 @@ if(isset($_POST['logOut']))
 {
     session_unset();
     session_destroy();
-    header('location:index.php');
+    echo '<script>location.href="index.php"</script>';
 }
 if(isset($_POST['logIn'])) 
 {
-    header('location:login.php');
+    echo '<script>location.href="login.php"</script>';
 }
 ?>

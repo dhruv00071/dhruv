@@ -9,7 +9,7 @@
 <body>
 <div>
 	<form method="post" action="">
-		<table align="center">
+		<table align="center" class="table table-hover">
 		<tr>
 			<th>Type</th>
 			<th>Brand</th>
@@ -22,7 +22,6 @@
 			include 'connect.php';
             $u_email=$_SESSION['u_email'];
             $u_username=$_SESSION['u_username']; 
-            $getId=$_SESSION['id'];
 			$select="SELECT * from cart where username='$u_username' and email='$u_email'";
 			$query=mysqli_query($con,$select);
 			while($row=mysqli_fetch_array($query))
@@ -31,6 +30,7 @@
                 $brand = $row['brand'];
                 $model_no = $row['model_no'];
                 $price = $row['price'];
+                $getId = $row['item_id'];
 			?>
 			<td><?php echo $type?></td>
 			<td><?php echo $brand?></td>

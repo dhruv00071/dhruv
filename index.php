@@ -12,10 +12,12 @@
     <link rel="stylesheet" type="text/css" href="css/in.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/index1.css">
 	<style type="text/css">
 	.card{
 		width: 400px;
-		height:500px;
+		height:auto;
+    margin: 10 auto;
 	}
 	.card img{
 		height:auto;
@@ -26,14 +28,13 @@
 		font-size: 40px;
 		color: black;
 	}
-
 	</style>
   </head>
   <body>
 
 <br>
+<div class="container">
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" >
-
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="1" class="active"></li>
@@ -57,7 +58,9 @@
     <span class="sr-only">Next</span>
   </a>
     </div>
-    <div class="card">
+</div>
+<div class="row">
+    <div class="card col-sm-3">
       <img src="iphone6.png" alt="Avatar">
       <div class="container">
         <h4 id="iphone"><b>iphone 6</b></h4>
@@ -73,8 +76,7 @@
       $model_no = $row['model_no'];
       $image = $row['image'];
       $price = $row['price'];
-
-      echo ' <div class="card">
+      echo ' <div class="card col-sm-3">
       <img src="pimages/'.$image.'" >
       <div class="container">
       <a  href="productview.php?id='.$id.'">'.$model_no.'<br></a>
@@ -82,27 +84,28 @@
       </div>
     </div>';
      } ?>
-    <div class="card">
+    <div class="card col-sm-3">
       <img src="tv.jpg" class="a2" alt="Avatar">
       <div class="container">
         <h4><b>Samsung LED TV</b></h4>
         <p style="font-size:20px">₹120000</p>
       </div>
     </div>
-    <div class="card">
+    <div class="card col-sm-3">
       <img src="book.png" alt="Avatar">
       <div class="container">
-        <h4><b>Diary of a Wimpy Kid: Trouble Manny</b></h4>
+        <h4><b>Diary of a Wimpy Kid</b></h4>
         <p style="font-size:20px">₹499</p>
       </div>
     </div>
-    <div class="card">
+    <div class="card col-sm-3">
       <img src="ear.jpg" alt="Avatar">
       <div class="container">
-        <h4><b>JBL C100SI In-Ear Headphones with Mic (White)</b></h4>
+        <h4><b>JBL In-Ear Headphones</b></h4>
       <p style="font-size:20px">₹800</p>
       </div>
     </div>
+</div>
     <script >
     	function drop-profile(){
     		document.getElementById('iphone').innerHTML = "New Content";
