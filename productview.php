@@ -98,7 +98,10 @@
     {
         if(!$_SESSION['u_id'])
         {
-            echo '<script>alert("Login First.")</script>';
+            echo '<script>
+                        alert("Login First.");
+                        location.href="login.php";
+                  </script>';
         }
         else
         {
@@ -132,7 +135,10 @@
     {
     	if(!$_SESSION['u_id'])
         {
-            echo '<script>alert("Login First.")</script>';
+            echo '<script>
+                        alert("Login First.");
+                        location.href="login.php";
+                  </script>';
         }
         else
         {
