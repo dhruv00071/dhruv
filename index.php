@@ -9,10 +9,9 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" type="text/css" href="css/in.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/index1.css">
+    <link rel="stylesheet" type="text/css" href="css/i.css">
 	<style type="text/css">
 	.card{
 		width: 400px;
@@ -38,14 +37,19 @@
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="1" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2" ></li>
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="forest.jpg" alt="First slide">
+      <img class="d-block w-100" id="imag" src="mega-mobile-sale.jpg" alt="First slide" height="500px">
     </div>
+
     <div class="carousel-item ">
-      <img class="d-block w-100" src="bri.jpg" alt="Second slide">
+      <img class="d-block w-100" src="paytm-sale-mobile-accessories.jpg" alt="Second slide" height="500px">
+    </div>
+
+    <div class="carousel-item ">
+      <img class="d-block w-100" src="banner_carousel-bigdeal-70off-aug26-16.jpg" alt="Third slide" height="500px">
     </div>
 
   </div>
@@ -110,6 +114,13 @@
     	function drop-profile(){
     		document.getElementById('iphone').innerHTML = "New Content";
     	}
+    	function imag(){
+    	var img= document.getElementById('imag');
+    	var width = img.clientWidth;
+    	var height = img.clientHeight;
+    	document.write(width);
+    	document.write(height);
+    }
     </script>
 
 
