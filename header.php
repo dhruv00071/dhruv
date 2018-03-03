@@ -1,7 +1,6 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-
     <title>E-commerce</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -19,27 +18,8 @@
         <img src="D:\web\icon.svg" width="50" height="50" alt="">
       </a>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="nav navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span>Notifications</a>
-        <ul class="dropdown-menu">
-          <li class="dropdown-item">
-<?php 
-    session_start();
-    if($_SESSION['notif']!=="" && isset($_SESSION['u_id']))
-    {
-      echo $_SESSION['notif'];
-    }
-    else
-    {
-      echo "No new notifications";
-    }
-?>
-          </li>
+  <div class="collapse navsdxzk;  ;pmknp   hobar-collapse" id="navbarSupportedContent">
+    <ul cl    </li>
         </ul>
       </li>
       <li class="nav-item dropdown">
@@ -60,7 +40,7 @@
     </ul>
 
     <form class="form-inline my-2 my-lg-0">
-  <a class="nav-link" href="dd3.php">Add Products <span class="sr-only">(current)</span></a>
+  <a class="nav-link" href="dd3.php?cat&cat3">Add Products <span class="sr-only">(current)</span></a>
     </form>
     <form class="form-inline my-2 my-lg-0">
   <a class="nav-link" href="login.php">Login <span class="sr-only">(current)</span></a>
