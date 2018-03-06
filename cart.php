@@ -9,7 +9,7 @@
 <body>
 <div>
 	<form method="post" action="">
-		<table align="center">
+		<table align="center" class="table table-hover">
 		<tr>
 			<th>Type</th>
 			<th>Brand</th>
@@ -19,24 +19,18 @@
 		</tr>
 		<tr>
 		<?php
-
 			include 'connect.php';
-			$id = $_GET['id'];
             $u_email=$_SESSION['u_email'];
             $u_username=$_SESSION['u_username'];
-            $getId=$_SESSION['id'];
 			$select="SELECT * from cart where username='$u_username' and email='$u_email'";
-			$result = "Select * from product_details WHERE id='$id'";
-			while($row = mysqli_fetch_array($result)){
-				echo "<img src='pimages/".$row['image']."' >";
-			}
 			$query=mysqli_query($con,$select);
 			while($row=mysqli_fetch_array($query))
-			{
+			{ 
 				$type = $row['type'];
                 $brand = $row['brand'];
                 $model_no = $row['model_no'];
                 $price = $row['price'];
+                $getId = $row['item_id'];
 			?>
 			<td><?php echo $type?></td>
 			<td><?php echo $brand?></td>

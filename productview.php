@@ -68,28 +68,112 @@
             width:40%;
             height: auto;
         }
+				@media only screen and (orientation: portrait){
+					img{
+						width:60%;
+            height: auto;
+						margin-left:90px;
+					}
+				}
+				@media only screen and (orientation: portrait){
+					.button{
+						background-color: #FF7F0E; /* Green */
+				    border: none;
+				    color: white;
+				    padding: 16px 32px;
+				    text-align: center;
+				    text-decoration: none;
+				    display: inline-block;
+				    font-size: 16px;
+				    -webkit-transition-duration: 0.4s; /* Safari */
+				    transition-duration: 0.4s;
+				    cursor: pointer;
+						float: inherit;
+						position:absolute;
+						border-radius: 4px;
+
+
+				    top:80%;
+				    left: 35%;
+
+					}
+				}
+				@media only screen and (orientation: portrait){
+					.button1{
+						background-color: #1873DF; /* Green */
+				    border: none;
+				    color: white;
+				    padding: 16px 32px;
+				    text-align: center;
+				    text-decoration: none;
+				    display: inline-block;
+				    font-size: 16px;
+				    -webkit-transition-duration: 0.4s; /* Safari */
+				    transition-duration: 0.4s;
+				    cursor: pointer;
+						float: inherit;
+            width:135px;
+						position:absolute;
+						border-radius: 4px;
+						top:90%;
+						margin-left: 35%;
+
+					}
+				}
+				@media only screen and (orientation: portrait){
+					h2{
+						font-size: 28px;
+						margin-left: 35%;
+						margin-top: 10%;
+
+					}
+				}
+				@media only screen and (orientation: portrait){
+					p{
+						color: black;
+						width: 320px;
+            padding: 10px;
+            border: 5px solid gray;
+            margin: 0;
+						margin-left: 30px;
+						margin-top: 20px;
+					}
+				}
     </style>
   </head>
   <body>
 <?php
+	$_SESSION['notif'] = "";
     $id = $_GET['id'];
     $result = mysqli_query($con,"SELECT * FROM product_details
     WHERE id='$id'") OR DIE(mysqli_error($con));
     while($row= mysqli_fetch_array($result))
     {
-			  $id=$row['id'];
         echo "<font size='4' face='Open Sans'>";
     echo "<div id='img_div'>";
-
     echo "<img  src='pimages/".$row['image']."' class='a1'>";
-    echo "<h2>Model: ".$row['model_no']."</h2>" ;
+		echo "<p>Price: ".$row['des']."</p>" ;
+
     echo "<h2>Price: ".$row['price']."</h2>" ;
     }
+
+            $getCategory = "Select * from product_details WHERE id='$id'";
+            $result=mysqli_query($con,$getCategory);
+
+            $row1 = mysqli_fetch_assoc($result);
+
+                $type = $row1['type'];
+                $brand = $row1['brand'];
+                $model_no = $row1['model_no'];
+                $price = $row1['price'];
     if(isset($_POST['cart']))
     {
         if(!$_SESSION['u_id'])
         {
-            echo '<script>alert("Login First.")</script>';
+            echo '<script>
+                        alert("Login First.");
+                        location.href="login.php";
+                  </script>';
         }
         else
         {
@@ -101,16 +185,7 @@
             $u_address=$_SESSION['u_address'];
             //from url in include in cart.php
             $_SESSION['id']=$id;
-echo ('<a  href="cart.php?id=' . $id . '">');
-            $getCategory = "Select * from product_details WHERE id='$id'";
-            $result=mysqli_query($con,$getCategory);
 
-            $row = mysqli_fetch_assoc($result);
-
-                $type = $row['type'];
-                $brand = $row['brand'];
-                $model_no = $row['model_no'];
-                $price = $row['price'];
 
             $addCart="INSERT into cart(item_id,fName,lName,username,email,type,brand,model_no,price,address) values(?,?,?,?,?,?,?,?,?,?)";
 
@@ -124,8 +199,22 @@ echo ('<a  href="cart.php?id=' . $id . '">');
             }
             else
             {
-                '<script>alert("Successfully added to cart")</script>';
+                echo '<script>alert("Successfully added to cart")</script>';
             }
+        }
+    }
+    if(isset($_POST['buy']))
+    {
+    	if(!$_SESSION['u_id'])
+        {
+            echo '<script>
+                        alert("Login First.");
+                        location.href="login.php";
+                  </script>';
+        }
+        else
+        {
+        	$_SESSION['notif'].= "You have successfully placed your order of ".$type." ".$brand." ".$model_no." having price : ".$price;
         }
     }
 ?>
