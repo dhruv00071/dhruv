@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/i.css">
+    <link rel="stylesheet" type="text/css" href="css/iii.css">
 	<style type="text/css">
 	.card{
 		width: 400px;
@@ -31,37 +31,7 @@
   </head>
   <body>
 
-<br>
-<div class="container">
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" >
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2" ></li>
-  </ol>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" id="imag" src="mega-mobile-sale.jpg" alt="First slide" height="500px">
-    </div>
 
-    <div class="carousel-item ">
-      <img class="d-block w-100" src="paytm-sale-mobile-accessories.jpg" alt="Second slide" height="500px">
-    </div>
-
-    <div class="carousel-item ">
-      <img class="d-block w-100" src="banner_carousel-bigdeal-70off-aug26-16.jpg" alt="Third slide" height="500px">
-    </div>
-
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-    </div>
 </div>
 <div class="row">
     <div class="card col-sm-3">
