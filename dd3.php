@@ -15,7 +15,7 @@ include 'header.php';
 			function reload(form)
 			{
 			var val = form.cat.options[form.cat.options.selectedIndex].value;
-			self.location='dd3.php?cat=' + val ;
+			self.location='dd3.php?cat=' + val + '&cat3';
 			}
 			function reload3(form)
 			{

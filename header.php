@@ -1,7 +1,6 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-
     <title>E-commerce</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -27,19 +26,37 @@
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span>Notifications</a>
         <ul class="dropdown-menu">
-          <li class="dropdown-item">
 <?php 
+    include 'connect.php';
     session_start();
-    if($_SESSION['notif']!=="" && isset($_SESSION['u_id']))
+    if(isset($_SESSION['u_id']))
     {
-      echo $_SESSION['notif'];
+        $showNotif = "SELECT * FROM notification LIMIT 2";
+        $queNotif  = mysqli_query($con,$showNotif);
+        $num = mysqli_num_rows($queNotif);
+      if($num > 0)
+      {
+        while($rowNotif = mysqli_fetch_assoc($queNotif))
+        {
+          echo '<div id="comments">';
+          echo '<li class="dropdown-item">';
+          echo $rowNotif['message']."<br>";
+          echo '</li>';
+          echo "<div class='dropdown-divider'></div>";
+          echo "</div>";
+        }
+      echo "<button class='btn btn-default' id='btn'>Load More Notifications.</button>";
+      }
+      else
+      {
+        echo "No new notifications";
+      }
     }
     else
     {
-      echo "No new notifications";
+      echo "To view notifications you need to login.";
     }
 ?>
-          </li>
         </ul>
       </li>
       <li class="nav-item dropdown">
@@ -60,7 +77,7 @@
     </ul>
 
     <form class="form-inline my-2 my-lg-0">
-  <a class="nav-link" href="dd3.php">Add Products <span class="sr-only">(current)</span></a>
+  <a class="nav-link" href="dd3.php?cat&cat3">Add Products <span class="sr-only">(current)</span></a>
     </form>
     <form class="form-inline my-2 my-lg-0">
   <a class="nav-link" href="login.php">Login <span class="sr-only">(current)</span></a>
@@ -169,6 +186,17 @@
   </form>
 
     <script src="js/header.js"></script>
+    <script>
+      $(document).ready(function(){
+        var count = 2;
+          $("#btn").click(function(){
+            count = count +2;
+            $("#comments").load("load.php",{
+              commentCount : count
+            });
+          });
+      });
+    </script>
    <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>

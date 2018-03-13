@@ -22,12 +22,13 @@ if (isset($_POST['upload']))
 	if (move_uploaded_file($_FILES['image']['tmp_name'], $target))
 	{
 		echo '<script>alert("Product inserted into Database")</script>';
-		echo 'Product succesfully added to your account.';
+		echo 'Product succesfully added to your account.<br>';
 		echo 'Please wait for the confirmation from our backend team!';
 	}
 	else
 	{
 		echo"Failed to upload your product";
+		printf("%s",mysqli_error($con));
     }
 }
 ?>

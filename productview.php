@@ -128,6 +128,11 @@
             else
             {
                 echo '<script>alert("Successfully added to cart")</script>';
+                $_SESSION['notif'].= "You have successfully added ".$type." ".$brand." ".$model_no." having price : ".$price." to your cart";
+                $notifUser = $_SESSION['u_username'];
+                $notification = $_SESSION['notif'];
+                $insertNotif = "INSERT into notification(username,message) values ('$notifUser','$notification')";
+                mysqli_query($con,$insertNotif);
             }
         }
     }
@@ -143,6 +148,10 @@
         else
         {
         	$_SESSION['notif'].= "You have successfully placed your order of ".$type." ".$brand." ".$model_no." having price : ".$price;
+            $notifUser = $_SESSION['u_username'];
+            $notification = $_SESSION['notif'];
+            $insertNotif = "INSERT into notification(username,message) values ('$notifUser','$notification')";
+            mysqli_query($con,$insertNotif);
         }
     }
 ?>
