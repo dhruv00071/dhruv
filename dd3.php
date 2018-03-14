@@ -9,14 +9,13 @@ include 'header.php';
 		   <link rel="stylesheet" type="text/css" href="css/dd3.css">
 		    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 		<script>
 			function reload(form)
 			{
 			var val = form.cat.options[form.cat.options.selectedIndex].value;
-			self.location='dd3.php?cat=' + val ;
+			self.location='dd3.php?cat=' + val + '&cat3';
 			}
 			function reload3(form)
 			{
@@ -24,43 +23,6 @@ include 'header.php';
 			var val2=form.subcat.options[form.subcat.options.selectedIndex].value;
 			self.location='dd3.php?cat=' + val + '&cat3=' + val2 ;
 			}
-		</script>
-		<script>
-		$(".char-textarea").on("keyup",function(event){
-  checkTextAreaMaxLength(this,event);
-});
-
-/*
-Checks the MaxLength of the Textarea
------------------------------------------------------
-@prerequisite:	textBox = textarea dom element
-				e = textarea event
-                length = Max length of characters
-*/
-function checkTextAreaMaxLength(textBox, e) {
-
-    var maxLength = parseInt($(textBox).data("length"));
-
-
-    if (!checkSpecialKeys(e)) {
-        if (textBox.value.length > maxLength - 1) textBox.value = textBox.value.substring(0, maxLength);
-   }
-  $(".char-count").html(maxLength - textBox.value.length);
-
-    return true;
-}
-/*
-Checks if the keyCode pressed is inside special chars
--------------------------------------------------------
-@prerequisite:	e = e.keyCode object for the key pressed
-*/
-function checkSpecialKeys(e) {
-    if (e.keyCode != 8 && e.keyCode != 46 && e.keyCode != 37 && e.keyCode != 38 && e.keyCode != 39 && e.keyCode != 40)
-        return false;
-    else
-        return true;
-}
-
 		</script>
 	</head>
 
@@ -137,24 +99,14 @@ function checkSpecialKeys(e) {
 
 		//echo "<br><br><";
 	?>
-	<style type="text/css">
-	@media only screen and (orientation: portrait){
-	form{
-		width:300px;
-	}
-}
-	</style>
 
-<form>
 	<br><br><input class="form-control input-lg" name='model' type=text placeholder='Model Number'>
 	<br><br><input class="form-control input-lg" name='price' type=number placeholder='Price'>
 	<br><br><input class="form-control input-lg" name='quantity' type=number placeholder='Quantity'>
-	<br><br><textarea  name="des"  data-length=250 class="char-textarea" align:"centre" style="width:340px" placeholder="Write your todays story......" rows="5"></textarea>
-<h4><span class="char-count">250</span> chars remaining</h4>
+	<br><br><textarea class="form-control" name="des" id="exampleTextarea" align:"centre" style="width:340px" placeholder="Write your todays story......" rows="5"></textarea>
 <br><br><input class="form-control input-lg" type="file" name="image">
 	<br><br><button type="submit" name="upload" class="button">Upload</button>
-</form>
-
+	<form>
 	</div>
 	</body>
 

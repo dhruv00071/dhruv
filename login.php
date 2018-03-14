@@ -83,13 +83,6 @@
       transition: all 0.5s;
       cursor: pointer;
     }
-    @media only screen and (orientation: portrait){
-    	form{
-    		width: 300px;
-        margin: 0 auto;
-        margin-top: 100px;
-    	}
-    }
     </style>
 
         <!-- Required meta tags -->

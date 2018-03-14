@@ -68,77 +68,6 @@
             width:40%;
             height: auto;
         }
-				@media only screen and (orientation: portrait){
-					img{
-						width:60%;
-            height: auto;
-						margin-left:90px;
-					}
-				}
-				@media only screen and (orientation: portrait){
-					.button{
-						background-color: #FF7F0E; /* Green */
-				    border: none;
-				    color: white;
-				    padding: 16px 32px;
-				    text-align: center;
-				    text-decoration: none;
-				    display: inline-block;
-				    font-size: 16px;
-				    -webkit-transition-duration: 0.4s; /* Safari */
-				    transition-duration: 0.4s;
-				    cursor: pointer;
-						float: inherit;
-						position:absolute;
-						border-radius: 4px;
-
-
-				    top:80%;
-				    left: 35%;
-
-					}
-				}
-				@media only screen and (orientation: portrait){
-					.button1{
-						background-color: #1873DF; /* Green */
-				    border: none;
-				    color: white;
-				    padding: 16px 32px;
-				    text-align: center;
-				    text-decoration: none;
-				    display: inline-block;
-				    font-size: 16px;
-				    -webkit-transition-duration: 0.4s; /* Safari */
-				    transition-duration: 0.4s;
-				    cursor: pointer;
-						float: inherit;
-            width:135px;
-						position:absolute;
-						border-radius: 4px;
-						top:90%;
-						margin-left: 35%;
-
-					}
-				}
-				@media only screen and (orientation: portrait){
-					h2{
-						font-size: 28px;
-						margin-left: 35%;
-						margin-top: 10%;
-
-					}
-				}
-				@media only screen and (orientation: portrait){
-					p{
-						color: black;
-						width: 320px;
-            padding: 10px;
-            border: 5px solid gray;
-            margin: 0;
-						margin-left: 30px;
-						margin-top: 20px;
-					}
-				}
     </style>
   </head>
   <body>
@@ -152,8 +81,7 @@
         echo "<font size='4' face='Open Sans'>";
     echo "<div id='img_div'>";
     echo "<img  src='pimages/".$row['image']."' class='a1'>";
-		echo "<p>Price: ".$row['des']."</p>" ;
-
+    echo "<h2>Model: ".$row['model_no']."</h2>" ;
     echo "<h2>Price: ".$row['price']."</h2>" ;
     }
 
@@ -181,7 +109,7 @@
             $u_fName=$_SESSION['u_fName'];
             $u_lName=$_SESSION['u_lName'];
             $u_email=$_SESSION['u_email'];
-            $u_username=$_SESSION['u_username'];
+            $u_username=$_SESSION['u_username']; 
             $u_address=$_SESSION['u_address'];
             //from url in include in cart.php
             $_SESSION['id']=$id;

@@ -37,13 +37,6 @@
       cursor: pointer;
 
     }
-    @media only screen and (orientation: portrait){
-    	form{
-    		width: 300px;
-        margin: 0 auto;
-        margin-top: 200px;
-    	}
-    }
 
     </style>
     <script type="text/javascript">
@@ -152,7 +145,7 @@
                     $insert= "INSERT INTO customer(fName,lName,username,email,password,confirmPassword,phone,address) VALUES(?,?,?,?,?,?,?,?)";
 
                   // Prepared Statements
-
+                    
                   if($password===$confirmPassword)
                   {
                     $stmt = mysqli_stmt_init($con);

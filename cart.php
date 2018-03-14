@@ -21,11 +21,11 @@
 		<?php
 			include 'connect.php';
             $u_email=$_SESSION['u_email'];
-            $u_username=$_SESSION['u_username'];
+            $u_username=$_SESSION['u_username']; 
 			$select="SELECT * from cart where username='$u_username' and email='$u_email'";
 			$query=mysqli_query($con,$select);
 			while($row=mysqli_fetch_array($query))
-			{ 
+			{
 				$type = $row['type'];
                 $brand = $row['brand'];
                 $model_no = $row['model_no'];
@@ -39,7 +39,7 @@
 			<td><a href="delete.php?delete=<?php echo $getId?>">Delete</a></td>
 			</tr>
 		<?php } ?>
-
+		
 		</table>
 	</form>
 </div>
