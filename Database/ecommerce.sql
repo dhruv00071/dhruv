@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 07, 2018 at 07:08 PM
+-- Generation Time: Mar 14, 2018 at 12:58 PM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 5.6.31
 
@@ -47,14 +47,11 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`id`, `item_id`, `fName`, `lName`, `username`, `email`, `type`, `brand`, `model_no`, `price`, `address`) VALUES
-(1, 0, 'Swapnil', 'Jaiswal', 'admin', 'swapnil@gmail.com', 'jeans', 'levi', 'saca', 5555, ''),
-(2, 0, 'Swapnil', 'Jaiswal', 'admin', 'swapnil@gmail.com', 'jeans', 'levi', 'saca', 5555, ''),
-(3, 0, 'Swapnil', 'Jaiswal', 'admin', 'swapnil@gmail.com', 'jeans', 'levi', 'saca', 5555, ''),
-(5, 4, 'uhj', 'iuj', 'a', 'a@hjn.cd', 'sneakers', 'nike', '11', 500, 'a'),
 (6, 5, 'uhj', 'iuj', 'a', 'a@hjn.cd', 'sneakers', 'nike', '125hjvg', 2000, 'a'),
-(14, 1, 'uhj', 'iuj', 'a', 'a@hjn.cd', 'mobile', 'samsung', 'd dfdf df', 222, 'a'),
-(15, 2, 'uhj', 'iuj', 'a', 'a@hjn.cd', 'sneakers', 'nike', 'asca', 56, 'a'),
-(16, 2, 'uhj', 'iuj', 'a', 'a@hjn.cd', 'sneakers', 'nike', 'asca', 56, 'a');
+(17, 3, 'uhj', 'iuj', 'a', 'a@hjn.cd', 'jeans', 'levi', 'saca', 5555, 'a'),
+(18, 3, 'uhj', 'iuj', 'a', 'a@hjn.cd', 'jeans', 'levi', 'saca', 5555, 'a'),
+(19, 17, 'Swapnil', 'Jaiswal', 'admin', 'swapnil@gmail.com', 'sneakers', '', 'k', 542, ''),
+(20, 5, 'Swapnil', 'Jaiswal', 'admin', 'swapnil@gmail.com', 'sneakers', 'nike', '125hjvg', 2000, '');
 
 -- --------------------------------------------------------
 
@@ -83,6 +80,32 @@ INSERT INTO `customer` (`id`, `fName`, `lName`, `username`, `email`, `password`,
 (19, 'gte', 'dg', 'dgb', 'JAiswal@gmail.com', '$2y$10$OVFq9oAi7utgmfDNDGevUuNpJnXL1azfBC7IesT/IKTCugSisrHd2', '$2y$10$QoRYOUhECBW/N4NkndmeXeD6V4BJkZIIVWcoH26YjDasV5IeB4gam', '639', ''),
 (20, 'UY', 'HJ', '1', 'S@N.VF', '$2y$10$z4d3VIAob4xZ0qRFFSD97eUN0BKoJdJSE8E87LrJhzIHDshgobhFG', '$2y$10$8Q8fHOCfavC3NhoIqLTdverNj/SJ59NIwupoKFejE1WpVBgNHlWt2', '1', ''),
 (21, 'uhj', 'iuj', 'a', 'a@hjn.cd', '$2y$10$lSinSadRwa0WG.G/W7j6E.J2JUVrMGr9.qLVe87/60PcLho7nlliy', '$2y$10$uVEzAVJNxGZqEouh6Oz9Qe1pBSj3Y8zsNW9HYDBve6fvEnqrePskS', '16532', 'a');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `notification`
+--
+
+CREATE TABLE `notification` (
+  `id` int(11) NOT NULL,
+  `username` varchar(256) NOT NULL,
+  `message` varchar(256) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `notification`
+--
+
+INSERT INTO `notification` (`id`, `username`, `message`) VALUES
+(1, 'admin', 'You have successfully placed your order of jeans  1 having price : 1'),
+(2, 'admin', 'You have successfully placed your order of tablets  84 having price : 5'),
+(3, 'admin', 'You have successfully placed your order of jeans  1 having price : 1'),
+(4, 'admin', 'You have successfully placed your order of jeans levi saca having price : 5555'),
+(5, 'admin', 'You have successfully placed your order of mobile samsung d dfdf df having price : 222'),
+(6, 'admin', 'You have successfully placed your order of sneakers  k having price : 542'),
+(7, 'admin', 'You have successfully placed your order of sneakers nike 125hjvg having price : 2000'),
+(8, 'admin', 'You have successfully added sneakers nike 125hjvg having price : 2000 to your cart');
 
 -- --------------------------------------------------------
 
@@ -140,7 +163,17 @@ INSERT INTO `product_details` (`id`, `category`, `type`, `brand`, `price`, `mode
 (5, 'footwear', 'sneakers', 'nike', '2000', '125hjvg', '', 'Pair_Of_Shoes_Image.jpg', 2),
 (6, 'clothing', 'jeans', '', '1', '1', '', 'Vertical Logo.png', 4),
 (7, 'clothing', 'jeans', '', '1', '1', '', 'Shoe_Image.PNG', 4),
-(8, 'electronic', 'tablets', '', '5', '84', '54svfd sd zcda', 'Vertical Logo.png', 5);
+(8, 'electronic', 'tablets', '', '5', '84', '54svfd sd zcda', 'Vertical Logo.png', 5),
+(9, 'clothing', 'jeans', '', '25000', '1145', '', 'puma.jpg', 4),
+(10, 'clothing', 'jeans', '', '25000', '1145', 'fcgvnk;m', 'puma.jpg', 4),
+(11, 'footwear', 'sneakers', 'nike', '25000', '1145', 'lomnkljb hgghiohipjok[', 'puma.jpg', 4),
+(12, 'footwear', 'sneakers', 'nike', '25000', '1145', 'lomnkljb hgghiohipjok[', 'puma.jpg', 4),
+(13, 'footwear', 'sneakers', 'nike', '25000', '1145', 'lomnkljb hgghiohipjok[', 'puma.jpg', 4),
+(14, 'footwear', 'sneakers', 'nike', '25000', '1145', 'lomnkljb hgghiohipjok[', 'puma.jpg', 4),
+(15, 'footwear', 'sneakers', '', '', '', '', '', 0),
+(16, 'footwear', 'sneakers', '', '542', 'k', 'm]\r\np,l4;5\'46\r\n3', 'book.png', 547),
+(17, 'footwear', 'sneakers', '', '542', 'k', 'm]\r\np,l4;5\'46\r\n3', 'puma.jpg', 547),
+(18, 'footwear', 'sneakers', '', '542', 'k', 'm]\r\np,l4;5\'46\r\n3', 'Untitled.jpg', 547);
 
 -- --------------------------------------------------------
 
@@ -235,6 +268,12 @@ ALTER TABLE `customer`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `notification`
+--
+ALTER TABLE `notification`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
@@ -267,12 +306,17 @@ ALTER TABLE `seller`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
   MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+--
+-- AUTO_INCREMENT for table `notification`
+--
+ALTER TABLE `notification`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `products`
 --
@@ -282,7 +326,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `product_details`
 --
 ALTER TABLE `product_details`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT for table `profileimg`
 --
